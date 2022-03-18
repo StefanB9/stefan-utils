@@ -5,12 +5,8 @@ from typing import Any
 
 from collections.abc import Callable
 from functools import wraps
-from logging import getLogger
 
 import pandas as pd
-
-log = getLogger(__name__)
-
 
 def df_cache(func: Callable[..., pd.DataFrame]) -> Callable[..., pd.DataFrame]:
     """Caching decorator for functions returning pd.DataFrame"""
@@ -30,13 +26,11 @@ def df_cache(func: Callable[..., pd.DataFrame]) -> Callable[..., pd.DataFrame]:
             + '.snappy.parquet'
         )
         if os.path.isfile(file_name):
-            log.info('Reading %s from cache', func.__name__)
             return pd.read_parquet(file_name)
 
         result = func(*args, **kwargs)
         if not os.path.exists(cache_dir):
             os.makedirs(cache_dir)
-        log.info('Caching %s', func.__name__)
         result.to_parquet(file_name, compression='snappy')
         return result
 

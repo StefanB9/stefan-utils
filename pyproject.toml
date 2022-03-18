@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "stefan-utils"
-version = "0.1.0"
+version = "0.0.1"
 description = ""
 authors = ["Stefan Bader <baderstefan@gmx.de>"]
+packages = [
+    {include="src/main/python/stefan-utils"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
