@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # pylint: disable-next=too-many-branches
-def data_optimize(df: pd.DataFrame, object_option: bool = False)\
+def df_optimize(df: pd.DataFrame, object_option: bool = False)\
         -> pd.DataFrame:
     """Reduce the size of the input dataframe
     Parameters

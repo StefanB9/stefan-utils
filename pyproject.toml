@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "stefan-utils"
-version = "0.0.1"
+version = "0.0.3"
 description = ""
 authors = ["Stefan Bader <baderstefan@gmx.de>"]
 packages = [
-    {include="src/main/python/stefan-utils"}
+    {include="stefan_utils", from="src/main/python/"}
 ]
 
 [tool.poetry.dependencies]

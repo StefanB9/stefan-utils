@@ -8,6 +8,7 @@ from functools import wraps
 
 import pandas as pd
 
+
 def df_cache(func: Callable[..., pd.DataFrame]) -> Callable[..., pd.DataFrame]:
     """Caching decorator for functions returning pd.DataFrame"""
     cache_dir = 'cache/'
