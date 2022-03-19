@@ -4,6 +4,8 @@ import logging
 
 import datetime as dt
 
+from typing import Literal
+
 from pythonjsonlogger import jsonlogger
 
 
@@ -24,7 +26,7 @@ def get_logger(name: str) -> logging.Logger:
     return logger
 
 
-def get_logger_json(name: str = 'logger'):
+def get_logger_json(name: str = 'logger') -> logging.Logger:
     """Function to get a new logger instance"""
     log = logging.getLogger(name)
     log.setLevel(logging.INFO)
@@ -46,9 +48,10 @@ class JsonLogFormatter(jsonlogger.JsonFormatter):
 
     def add_fields(
             self,
-            log_record: dict,
+            log_record: dict[str, Literal],
             record: logging.LogRecord,
-            message_dict: dict) -> None:
+            message_dict: dict[str, str]
+    ) -> None:
         super().add_fields(log_record, record, message_dict)
 
         log_record['log_type'] = 'application_log'

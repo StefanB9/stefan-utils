@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stefan-utils"
-version = "0.0.3"
+version = "0.0.7"
 description = ""
 authors = ["Stefan Bader <baderstefan@gmx.de>"]
 packages = [
@@ -18,6 +18,9 @@ pyarrow = "^7.0.0"
 pytest = "^7.1.1"
 pylint = "^2.12.2"
 mypy = "^0.941"
+
+[tool.mypy]
+strict = "true"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -32,7 +32,7 @@ def df_cache(func: Callable[..., pd.DataFrame]) -> Callable[..., pd.DataFrame]:
         result = func(*args, **kwargs)
         if not os.path.exists(cache_dir):
             os.makedirs(cache_dir)
-        result.to_parquet(file_name, compression='snappy')
+        result.to_parquet(file_name)
         return result
 
     return inner_func
