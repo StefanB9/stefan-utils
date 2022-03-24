@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "stefan-utils"
-version = "0.0.7"
+version = "0.1.0"
 description = ""
 authors = ["Stefan Bader <baderstefan@gmx.de>"]
 packages = [
@@ -13,11 +13,12 @@ python-json-logger = "^2.0.2"
 numpy = "^1.22.3"
 pandas = "^1.4.1"
 pyarrow = "^7.0.0"
+pytest = "^7.1.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.1.1"
 pylint = "^2.12.2"
 mypy = "^0.941"
+black = "^22.1.0"
 
 [tool.mypy]
 strict = "true"
