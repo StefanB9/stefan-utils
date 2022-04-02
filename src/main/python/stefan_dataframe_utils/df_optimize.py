@@ -36,7 +36,8 @@ def df_optimize(df: pd.DataFrame, object_option: bool = False) -> pd.DataFrame:
                     df[col] = df[col]
             else:
                 # if it has negative values, downcast based on the min and max
-                if col_max < np.iinfo(np.int8).max and col_min > np.iinfo(np.int8).min:
+                if col_max < np.iinfo(np.int8).max and\
+                        col_min > np.iinfo(np.int8).min:
                     df[col] = df[col].astype(np.int8)
                 elif (
                     col_max < np.iinfo(np.int16).max
